@@ -1,0 +1,147 @@
+
+/* Helpdesk Enterprise Admin UI v2 FORCE - A0 unified format
+   Put this file after all page-level CSS so every management page has the same look. */
+:root{
+  --admin-v2-bg:#f4f7fb;
+  --admin-v2-card:#ffffff;
+  --admin-v2-border:#e5e7eb;
+  --admin-v2-soft:#eef2f7;
+  --admin-v2-head:#f8fafc;
+  --admin-v2-text:#0f172a;
+  --admin-v2-muted:#64748b;
+  --admin-v2-primary:#0d6efd;
+  --admin-v2-success:#198754;
+  --admin-v2-warning:#ffc107;
+  --admin-v2-danger:#dc3545;
+  --admin-v2-shadow:0 10px 24px rgba(15,23,42,.06);
+  --admin-v2-radius:18px;
+}
+body{background:var(--admin-v2-bg)!important;color:var(--admin-v2-text)!important;}
+
+/* One unified page title block */
+.master-page-header,.assign-page-header,.ah-page-header,.kbc-hero{
+  display:flex!important;justify-content:space-between!important;align-items:flex-start!important;gap:14px!important;
+  width:100%!important;margin:0 0 18px!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;
+}
+.master-page-header>div:first-child,.assign-page-header>div:first-child,.ah-page-header>div:first-child,.kbc-hero>div:first-child{min-width:0!important;}
+.master-page-header h2,.assign-page-header h2,.ah-page-header h2,.kbc-hero h2{
+  font-size:30px!important;line-height:1.18!important;font-weight:850!important;letter-spacing:-.02em!important;color:var(--admin-v2-text)!important;margin:0 0 6px!important;
+}
+.master-page-header .text-muted,.assign-page-header .text-muted,.ah-page-header .text-muted,.kbc-hero .text-muted{
+  color:var(--admin-v2-muted)!important;font-size:14px!important;
+}
+.master-page-header .btn,.assign-page-header .btn,.ah-page-header .btn,.kbc-hero .btn{
+  border-radius:12px!important;min-height:40px!important;font-weight:800!important;padding:.45rem .95rem!important;white-space:nowrap!important;
+}
+
+/* One unified card system */
+.master-card,.assign-card,.ah-card,.kbc-card{
+  background:var(--admin-v2-card)!important;border:1px solid var(--admin-v2-border)!important;border-radius:var(--admin-v2-radius)!important;
+  box-shadow:var(--admin-v2-shadow)!important;overflow:hidden!important;margin:0 0 18px!important;width:100%!important;
+}
+.master-card-header,.assign-card-header,.ah-card-header,.kbc-card-header{
+  padding:18px 20px!important;border-bottom:1px solid var(--admin-v2-soft)!important;background:#fff!important;
+  display:flex!important;justify-content:space-between!important;align-items:center!important;gap:14px!important;font-weight:900!important;color:var(--admin-v2-text)!important;
+}
+.master-card-header strong,.assign-card-header strong,.ah-card-header strong,.kbc-card-header{font-size:16px!important;font-weight:900!important;color:var(--admin-v2-text)!important;}
+.master-card-header .text-muted,.assign-card-header .text-muted,.ah-card-header .text-muted,.kbc-card-header .text-muted{font-size:12px!important;color:var(--admin-v2-muted)!important;}
+.master-card-body,.assign-card-body,.ah-card-body,.kbc-card-body{padding:20px!important;background:#fff!important;}
+
+/* Force KB page to the same A0 one-column layout */
+.kbc-page{max-width:none!important;margin:0 0 28px!important;padding:0!important;}
+.kbc-grid{display:block!important;grid-template-columns:none!important;gap:0!important;}
+.kbc-grid>.kbc-card{margin-bottom:18px!important;}
+.kbc-hero{max-width:none!important;}
+.kbc-hero .bi{color:var(--admin-v2-primary)!important;}
+
+/* Form fields */
+.form-label{font-weight:800!important;color:#111827!important;margin-bottom:7px!important;}
+.form-control,.form-select,.input-group-text{
+  border:1px solid #d9e1ea!important;border-radius:10px!important;min-height:38px!important;color:#111827!important;background:#fff!important;
+}
+.form-control:focus,.form-select:focus{border-color:#93c5fd!important;box-shadow:0 0 0 .2rem rgba(13,110,253,.12)!important;}
+.input-group .input-group-text{border-top-right-radius:0!important;border-bottom-right-radius:0!important;}
+.input-group .form-control{border-top-left-radius:0!important;border-bottom-left-radius:0!important;}
+.search-input,.ah-search,.admin-v2-search-wrap{max-width:360px!important;width:100%!important;}
+
+/* Add form: make non-row pages feel closer to A0 without breaking many-field pages */
+.master-card:first-of-type .master-card-body form:not(.d-inline),
+.assign-card:first-of-type .assign-card-body form:not(.d-inline),
+.kbc-card:first-of-type .kbc-card-body form:not(.d-inline){width:100%!important;}
+.master-card:first-of-type .btn-success,.assign-card:first-of-type .btn-success,.kbc-card:first-of-type .btn-primary,
+.master-card:first-of-type .ah-btn-add{min-height:40px!important;border-radius:10px!important;font-weight:900!important;}
+
+/* Tables: every page uses A0 light header */
+.table-responsive{border-radius:0!important;}
+.master-table,.assign-table,.ah-table,.kbc-card .table,table.hd-mobile-card-table{margin-bottom:0!important;border-color:var(--admin-v2-border)!important;width:100%!important;}
+.master-table thead,.assign-table thead,.ah-table thead,.kbc-card table thead,table.hd-mobile-card-table thead,
+.master-table thead.table-dark,.assign-table thead.table-dark,.ah-table thead.table-dark,table.hd-mobile-card-table thead.table-dark,
+.table-dark,.table-light{
+  --bs-table-bg:var(--admin-v2-head)!important;--bs-table-color:#334155!important;background:var(--admin-v2-head)!important;color:#334155!important;
+}
+.master-table thead th,.assign-table thead th,.ah-table thead th,.kbc-card table thead th,table.hd-mobile-card-table thead th,
+.table-dark th,.table-light th{
+  background:var(--admin-v2-head)!important;color:#334155!important;border-bottom:1px solid var(--admin-v2-border)!important;
+  font-size:13px!important;font-weight:900!important;padding:13px 14px!important;white-space:nowrap!important;
+}
+.master-table td,.assign-table td,.ah-table td,.kbc-card .table td,table.hd-mobile-card-table td{
+  vertical-align:middle!important;padding:10px 14px!important;border-color:var(--admin-v2-border)!important;color:#111827!important;
+}
+.master-table tbody tr:hover,.assign-table tbody tr:hover,.kbc-card .table tbody tr:hover,table.hd-mobile-card-table tbody tr:hover{background:#f8fbff!important;}
+
+/* Buttons: all management pages use same A0 colors */
+.btn{border-radius:10px!important;font-weight:800!important;}
+.btn-sm{min-height:32px!important;padding:.32rem .65rem!important;}
+.btn-success,.ah-btn-add{background:var(--admin-v2-success)!important;border-color:var(--admin-v2-success)!important;color:#fff!important;}
+.btn-primary,.ah-btn-save{background:var(--admin-v2-primary)!important;border-color:var(--admin-v2-primary)!important;color:#fff!important;}
+.btn-warning,.ah-btn-toggle,.kbc-card .btn-outline-secondary{background:var(--admin-v2-warning)!important;border-color:var(--admin-v2-warning)!important;color:#111827!important;}
+.btn-danger,.ah-btn-delete,.kbc-card .btn-outline-danger{background:var(--admin-v2-danger)!important;border-color:var(--admin-v2-danger)!important;color:#fff!important;}
+.btn-outline-secondary:not(:disabled){border-color:#94a3b8!important;color:#475569!important;background:#fff!important;}
+.btn-outline-secondary:not(:disabled):hover{background:#f1f5f9!important;color:#0f172a!important;}
+.action-buttons,.status-action-group,.ah-actions{display:flex!important;flex-wrap:wrap!important;gap:6px!important;align-items:center!important;}
+.action-buttons .btn,.status-action-group .btn,.ah-actions .btn{min-width:58px!important;}
+
+/* Badge / Switch / Alert */
+.badge,.usage-badge{border-radius:999px!important;font-weight:900!important;padding:.38rem .65rem!important;}
+.badge.bg-light.text-dark{background:#f1f5f9!important;color:#0f172a!important;}
+.badge.bg-secondary{background:#64748b!important;color:#fff!important;}
+.badge.bg-primary{background:#dbeafe!important;color:#1d4ed8!important;}
+.form-check-input:checked{background-color:var(--admin-v2-primary)!important;border-color:var(--admin-v2-primary)!important;}
+.alert-info,.ah-info,.kbc-card .alert-info{
+  background:#cff4fc!important;border:1px solid #9eeaf9!important;color:#055160!important;border-radius:12px!important;padding:14px 16px!important;
+}
+.alert-success,.alert-danger{border-radius:12px!important;}
+
+/* Dynamically inserted search input */
+.admin-v2-search-wrap{margin-left:auto!important;}
+.admin-v2-search-wrap .input-group-text{background:#fff!important;color:#0f172a!important;}
+
+/* Mobile card UI: normalized for all pages */
+@media(max-width:768px){
+  .master-page-header,.assign-page-header,.ah-page-header,.kbc-hero{flex-direction:column!important;align-items:flex-start!important;gap:10px!important;margin-bottom:14px!important;}
+  .master-page-header h2,.assign-page-header h2,.ah-page-header h2,.kbc-hero h2{font-size:24px!important;line-height:1.22!important;}
+  .master-page-header .btn,.assign-page-header .btn,.ah-page-header .btn,.kbc-hero .btn{width:100%!important;min-height:46px!important;display:flex!important;align-items:center!important;justify-content:center!important;}
+  .master-card,.assign-card,.ah-card,.kbc-card{border-radius:18px!important;margin-bottom:14px!important;}
+  .master-card-header,.assign-card-header,.ah-card-header,.kbc-card-header{display:block!important;padding:15px 16px!important;}
+  .master-card-body,.assign-card-body,.ah-card-body,.kbc-card-body{padding:15px!important;}
+  .search-input,.ah-search,.admin-v2-search-wrap{max-width:none!important;width:100%!important;margin-top:12px!important;}
+  .table-responsive{overflow:visible!important;}
+  table.hd-mobile-card-table,.master-table,.assign-table,.kbc-card .table{border-collapse:separate!important;border-spacing:0 12px!important;width:100%!important;margin-bottom:0!important;}
+  table.hd-mobile-card-table thead,.master-table thead,.assign-table thead,.kbc-card .table thead{display:none!important;}
+  table.hd-mobile-card-table tbody,table.hd-mobile-card-table tr,table.hd-mobile-card-table td,
+  .master-table tbody,.master-table tr,.master-table td,.assign-table tbody,.assign-table tr,.assign-table td,.kbc-card .table tbody,.kbc-card .table tr,.kbc-card .table td{display:block!important;width:100%!important;}
+  table.hd-mobile-card-table tbody tr,.master-table tbody tr,.assign-table tbody tr,.kbc-card .table tbody tr{
+    background:#fff!important;border:1px solid var(--admin-v2-border)!important;border-radius:18px!important;box-shadow:var(--admin-v2-shadow)!important;padding:14px!important;margin-bottom:12px!important;overflow:hidden!important;
+  }
+  table.hd-mobile-card-table td,.master-table td,.assign-table td,.kbc-card .table td{border:0!important;border-bottom:1px dashed var(--admin-v2-border)!important;padding:10px 0!important;min-height:auto!important;}
+  table.hd-mobile-card-table td:last-child,.master-table td:last-child,.assign-table td:last-child,.kbc-card .table td:last-child{border-bottom:0!important;padding-bottom:0!important;}
+  table.hd-mobile-card-table td::before,.master-table td::before,.assign-table td::before,.kbc-card .table td::before{
+    display:block!important;font-size:11px!important;font-weight:900!important;color:var(--admin-v2-muted)!important;text-transform:uppercase!important;letter-spacing:.04em!important;margin-bottom:6px!important;
+  }
+  table.hd-mobile-card-table input.form-control,table.hd-mobile-card-table select.form-select,.master-table td input,.master-table td select,.assign-table td input,.assign-table td select,.kbc-card .table td input,.kbc-card .table td select{
+    width:100%!important;min-height:46px!important;font-size:16px!important;border-radius:13px!important;
+  }
+  table.hd-mobile-card-table .btn,.master-table .btn,.assign-table .btn,.kbc-card .table .btn{min-height:42px!important;border-radius:12px!important;font-size:14px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:5px!important;margin:0!important;width:100%!important;}
+  table.hd-mobile-card-table td:last-child,.master-table td:last-child,.assign-table td:last-child,.kbc-card .table td:last-child,.action-buttons,.status-action-group,.ah-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;width:100%!important;align-items:stretch!important;}
+  .action-buttons form,.status-action-group form,.action-buttons .d-inline,.status-action-group .d-inline,.kbc-card .table td:last-child form{display:block!important;width:100%!important;margin:0!important;}
+}

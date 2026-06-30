@@ -363,7 +363,7 @@ $items = ticket_status_fetch_all($pdo, false);
 
     <div class="table-responsive">
         <table class="table table-hover master-table mb-0 hd-mobile-card-table">
-            <thead class="table-dark">
+            <thead class="table-light">
                 <tr>
                     <th>No.</th>
                     <th>Status Name</th>
@@ -551,4 +551,6 @@ $items = ticket_status_fetch_all($pdo, false);
 .master-card-header{background:#fff;}
 </style>
 <style>@media(max-width:768px){table.hd-mobile-card-table td:nth-child(1)::before{content:"序号";}table.hd-mobile-card-table td:nth-child(2)::before{content:"状态名称";}table.hd-mobile-card-table td:nth-child(3)::before{content:"颜色";}table.hd-mobile-card-table td:nth-child(4)::before{content:"排序";}table.hd-mobile-card-table td:nth-child(5)::before{content:"已关闭?";}table.hd-mobile-card-table td:nth-child(6)::before{content:"启用?";}table.hd-mobile-card-table td:nth-child(7)::before{content:"使用量";}table.hd-mobile-card-table td:nth-child(8)::before{content:"预览";}table.hd-mobile-card-table td:nth-child(9)::before{content:"操作";}}</style>
+<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260630true1">
+
 <?php require 'footer.php'; ?>

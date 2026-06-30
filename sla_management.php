@@ -296,6 +296,8 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     .master-table td:nth-child(5)::before{content:'Action';}
 }
 </style>
+<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260630true1">
+
 
 
 <div class="master-page-header">
@@ -353,7 +355,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="table-responsive">
         <table class="table table-hover master-table mb-0" id="masterTable">
-            <thead class="table-dark"><tr><th>No.</th>
+            <thead class="table-light"><tr><th>No.</th>
 <th>Priority Name</th>
 <th>SLA Hours</th>
 <th>Status</th>

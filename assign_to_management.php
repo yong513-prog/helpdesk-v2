@@ -340,6 +340,8 @@ $assignList = $stmt->fetchAll(PDO::FETCH_ASSOC);
     .assign-table td:nth-child(5)::before{content:'Action';}
 }
 </style>
+<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260630true1">
+
 
 <div class="assign-page-header">
     <div>
@@ -406,7 +408,7 @@ $assignList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="table-responsive">
         <table class="table table-hover assign-table mb-0" id="assignTable">
-            <thead class="table-dark">
+            <thead class="table-light">
                 <tr>
                     <th style="width:70px;">No.</th>
                     <th>Name</th>

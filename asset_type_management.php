@@ -340,6 +340,8 @@ catch(Exception $e)
   table.hd-mobile-card-table td:nth-child(6)::before{content:"操作";}
 }
 </style>
+<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260630true1">
+
 <div class="master-page-header">
     <div>
         <h2 class="mb-1">Asset Type Management</h2>
@@ -376,7 +378,7 @@ catch(Exception $e)
         <div class="master-card-body">
                 <div class="table-responsive">
                     <table class="table table-hover align-middle master-table hd-mobile-card-table">
-                        <thead class="table-dark">
+                        <thead class="table-light">
                             <tr>
                                 <th style="width:70px;">No.</th>
                                 <th>Asset Type</th>
