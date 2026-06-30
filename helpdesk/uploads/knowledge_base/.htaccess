@@ -1,0 +1,6 @@
+Options -Indexes
+php_flag engine off
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phar .cgi .pl .asp .aspx .jsp
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|php8|phar|cgi|pl|asp|aspx|jsp|sh|bat|cmd|exe|com|js|html|htm)$">
+Require all denied
+</FilesMatch>
