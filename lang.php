@@ -1751,6 +1751,34 @@ function hd_translation_dict(){
     $ms = array_merge($ms, $github_circle_ms);
     $zh = array_merge($zh, $github_circle_zh);
 
+
+
+    // GitHub latest circle-only fix: KB category management helper text.
+    $github_kb_category_ms = [
+        'Add a category used by Knowledge Base articles.' => 'Tambah kategori untuk artikel Pangkalan Pengetahuan.',
+        'Add a category used by 知识库 articles.' => 'Tambah kategori untuk artikel Pangkalan Pengetahuan.',
+        'Add a category used by 知识库 文章.' => 'Tambah kategori untuk artikel Pangkalan Pengetahuan.',
+        'Used categories cannot be hard-deleted; they will be disabled instead.' => 'Kategori yang telah digunakan tidak boleh dipadam terus; ia akan dinyahaktifkan.',
+        'Linked pages:' => 'Halaman berkaitan:',
+        'Add Article and Edit Article automatically use enabled categories from this list.' => 'Tambah Artikel dan Edit Artikel akan menggunakan kategori aktif daripada senarai ini secara automatik.',
+        'Add Article and Edit Article automatically use enabled categories from this list. Used categories cannot be hard-deleted; they will be disabled instead.' => 'Tambah Artikel dan Edit Artikel akan menggunakan kategori aktif daripada senarai ini secara automatik. Kategori yang telah digunakan tidak boleh dipadam terus; ia akan dinyahaktifkan.',
+        '添加文章 and 编辑文章 automatically use enabled categories from this list.' => 'Tambah Artikel dan Edit Artikel akan menggunakan kategori aktif daripada senarai ini secara automatik.',
+        '添加文章 and 编辑文章 automatically use enabled categories from this list. 已使用的分类不能删除，将自动停用.' => 'Tambah Artikel dan Edit Artikel akan menggunakan kategori aktif daripada senarai ini secara automatik. Kategori yang telah digunakan tidak boleh dipadam terus; ia akan dinyahaktifkan.',
+    ];
+    $github_kb_category_zh = [
+        'Add a category used by Knowledge Base articles.' => '添加供知识库文章使用的分类。',
+        'Add a category used by 知识库 articles.' => '添加供知识库文章使用的分类。',
+        'Add a category used by 知识库 文章.' => '添加供知识库文章使用的分类。',
+        'Used categories cannot be hard-deleted; they will be disabled instead.' => '已使用的分类不能删除，将自动停用。',
+        'Linked pages:' => '关联页面：',
+        'Add Article and Edit Article automatically use enabled categories from this list.' => '添加文章及编辑文章会自动使用此列表中已启用的分类。',
+        'Add Article and Edit Article automatically use enabled categories from this list. Used categories cannot be hard-deleted; they will be disabled instead.' => '添加文章及编辑文章会自动使用此列表中已启用的分类。已使用的分类不能删除，将自动停用。',
+        '添加文章 and 编辑文章 automatically use enabled categories from this list.' => '添加文章及编辑文章会自动使用此列表中已启用的分类。',
+        '添加文章 and 编辑文章 automatically use enabled categories from this list. 已使用的分类不能删除，将自动停用.' => '添加文章及编辑文章会自动使用此列表中已启用的分类。已使用的分类不能删除，将自动停用。',
+    ];
+    $ms = array_merge($ms, $github_kb_category_ms);
+    $zh = array_merge($zh, $github_kb_category_zh);
+
     $dict = ['ms'=>$ms,'zh'=>$zh];
     return $dict;
 }
