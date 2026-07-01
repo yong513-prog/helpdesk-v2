@@ -1712,6 +1712,45 @@ function hd_translation_dict(){
         'Add Article and Edit Article automatically use enabled categories from this list. Used categories cannot be hard-deleted; they will be disabled instead.' => '添加文章和编辑文章会自动使用此列表中的启用分类。已使用的分类不能硬删除，将改为停用。'
     ]);
 
+
+    // GitHub source final circle-only phrase fixes for KB Category Management and Asset Type Management.
+    $github_circle_ms = [
+        'Used categories cannot be hard-deleted; they will be disabled instead.' => 'Kategori yang telah digunakan tidak boleh dipadam. Ia akan dinyahaktifkan.',
+        'Used categories cannot be deleted. They will be disabled instead.' => 'Kategori yang telah digunakan tidak boleh dipadam. Ia akan dinyahaktifkan.',
+        '已使用 categories cannot be hard-deleted; they will be disabled instead.' => 'Kategori yang telah digunakan tidak boleh dipadam. Ia akan dinyahaktifkan.',
+        'Add Article and Edit Article automatically use enabled categories from this list. Used categories cannot be hard-deleted; they will be disabled instead.' => 'Tambah Artikel dan Edit Artikel akan menggunakan kategori yang diaktifkan daripada senarai ini secara automatik. Kategori yang telah digunakan tidak boleh dipadam dan akan dinyahaktifkan.',
+        'Add Article and Edit Article automatically use enabled categories from this list. Used categories cannot be deleted. They will be disabled instead.' => 'Tambah Artikel dan Edit Artikel akan menggunakan kategori yang diaktifkan daripada senarai ini secara automatik. Kategori yang telah digunakan tidak boleh dipadam dan akan dinyahaktifkan.',
+        '添加文章 and 编辑文章 automatically use enabled categories from this list. 已使用 categories cannot be hard-deleted; they will be disabled instead.' => 'Tambah Artikel dan Edit Artikel akan menggunakan kategori yang diaktifkan daripada senarai ini secara automatik. Kategori yang telah digunakan tidak boleh dipadam dan akan dinyahaktifkan.',
+        'Add a new asset type option for assets.' => 'Tambah jenis aset baharu.',
+        '添加 a new asset type option for assets.' => 'Tambah jenis aset baharu.',
+        'Enabled asset types appear in Add Asset / Edit Asset dropdowns.' => 'Jenis aset yang diaktifkan akan dipaparkan dalam senarai Tambah Aset dan Edit Aset.',
+        'Enabled asset types appear in Tambah Aset / Edit Aset dropdowns.' => 'Jenis aset yang diaktifkan akan dipaparkan dalam senarai Tambah Aset dan Edit Aset.',
+        '启用 asset types appear in 添加资产 / 编辑资产 dropdowns.' => 'Jenis aset yang diaktifkan akan dipaparkan dalam senarai Tambah Aset dan Edit Aset.',
+        'Asset Types already used by assets cannot be deleted; use Disable instead.' => 'Jenis aset yang sedang digunakan tidak boleh dipadam. Sila nyahaktifkan sahaja.',
+        'Asset Types already used by assets cannot be deleted; use disable instead.' => 'Jenis aset yang sedang digunakan tidak boleh dipadam. Sila nyahaktifkan sahaja.',
+        'Asset Types already used by assets cannot be deleted; use 停用 instead.' => 'Jenis aset yang sedang digunakan tidak boleh dipadam. Sila nyahaktifkan sahaja.',
+        'Asset types already in use cannot be deleted. Please disable them instead.' => 'Jenis aset yang sedang digunakan tidak boleh dipadam. Sila nyahaktifkan sahaja.',
+    ];
+    $github_circle_zh = [
+        'Used categories cannot be hard-deleted; they will be disabled instead.' => '已使用的分类不能删除，将自动停用。',
+        'Used categories cannot be deleted. They will be disabled instead.' => '已使用的分类不能删除，将自动停用。',
+        '已使用 categories cannot be hard-deleted; they will be disabled instead.' => '已使用的分类不能删除，将自动停用。',
+        'Add Article and Edit Article automatically use enabled categories from this list. Used categories cannot be hard-deleted; they will be disabled instead.' => '添加文章及编辑文章会自动使用此列表中已启用的分类。已使用的分类不能删除，将自动停用。',
+        'Add Article and Edit Article automatically use enabled categories from this list. Used categories cannot be deleted. They will be disabled instead.' => '添加文章及编辑文章会自动使用此列表中已启用的分类。已使用的分类不能删除，将自动停用。',
+        '添加文章 and 编辑文章 automatically use enabled categories from this list. 已使用 categories cannot be hard-deleted; they will be disabled instead.' => '添加文章及编辑文章会自动使用此列表中已启用的分类。已使用的分类不能删除，将自动停用。',
+        'Add a new asset type option for assets.' => '添加新的资产类型供资产使用。',
+        '添加 a new asset type option for assets.' => '添加新的资产类型供资产使用。',
+        'Enabled asset types appear in Add Asset / Edit Asset dropdowns.' => '启用的资产类型会显示在添加资产及编辑资产的下拉选单。',
+        'Enabled asset types appear in Tambah Aset / Edit Aset dropdowns.' => '启用的资产类型会显示在添加资产及编辑资产的下拉选单。',
+        '启用 asset types appear in 添加资产 / 编辑资产 dropdowns.' => '启用的资产类型会显示在添加资产及编辑资产的下拉选单。',
+        'Asset Types already used by assets cannot be deleted; use Disable instead.' => '已被资产使用的资产类型不能删除，请使用停用。',
+        'Asset Types already used by assets cannot be deleted; use disable instead.' => '已被资产使用的资产类型不能删除，请使用停用。',
+        'Asset Types already used by assets cannot be deleted; use 停用 instead.' => '已被资产使用的资产类型不能删除，请使用停用。',
+        'Asset types already in use cannot be deleted. Please disable them instead.' => '已被资产使用的资产类型不能删除，请使用停用。',
+    ];
+    $ms = array_merge($ms, $github_circle_ms);
+    $zh = array_merge($zh, $github_circle_zh);
+
     $dict = ['ms'=>$ms,'zh'=>$zh];
     return $dict;
 }
