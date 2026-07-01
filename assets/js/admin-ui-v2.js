@@ -1,26 +1,23 @@
+// Helpdesk Admin UI v2 mobile table helper.
+// It derives mobile card labels from the desktop table header so labels never mismatch between pages.
+document.addEventListener('DOMContentLoaded', function () {
+  function normalize(text) {
+    return (text || '').replace(/\s+/g, ' ').trim();
+  }
 
-// Helpdesk Enterprise Admin UI v2 helper
-// Adds the same A0-style search bar to list cards that do not already have one.
-document.addEventListener('DOMContentLoaded', function(){
-  const cards = document.querySelectorAll('.master-card, .assign-card, .kbc-card');
-  cards.forEach(function(card){
-    const table = card.querySelector('table');
-    const header = card.querySelector('.master-card-header, .assign-card-header, .kbc-card-header');
-    if(!table || !header) return;
-    let search = card.querySelector('input[type="text"][id*="Search"], input[type="text"][id*="search"], .admin-v2-search');
-    if(!search){
-      const wrap = document.createElement('div');
-      wrap.className = 'input-group admin-v2-search-wrap';
-      wrap.innerHTML = '<span class="input-group-text"><i class="bi bi-search"></i></span><input type="text" class="form-control admin-v2-search" placeholder="Search...">';
-      header.appendChild(wrap);
-      search = wrap.querySelector('input');
-    }
-    if(search.dataset.adminV2Bound === '1') return;
-    search.dataset.adminV2Bound = '1';
-    search.addEventListener('input', function(){
-      const keyword = this.value.toLowerCase().trim();
-      table.querySelectorAll('tbody tr').forEach(function(row){
-        row.style.display = row.innerText.toLowerCase().includes(keyword) ? '' : 'none';
+  document.querySelectorAll('table.master-table, table.assign-table, table.hd-mobile-card-table, .kbc-card table').forEach(function (table) {
+    table.classList.add('hd-mobile-card-table');
+
+    var headers = Array.from(table.querySelectorAll('thead th')).map(function (th) {
+      return normalize(th.textContent);
+    });
+
+    table.querySelectorAll('tbody tr').forEach(function (row) {
+      Array.from(row.children).forEach(function (cell, index) {
+        if (cell.tagName && cell.tagName.toLowerCase() === 'td') {
+          var label = headers[index] || '';
+          cell.setAttribute('data-label', label);
+        }
       });
     });
   });

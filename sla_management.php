@@ -296,10 +296,9 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     .master-table td:nth-child(5)::before{content:'Action';}
 }
 </style>
-<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260630true1">
 
 
-
+<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260701-unified3">
 <div class="master-page-header">
     <div>
         <h2 class="mb-1">SLA Management</h2>
@@ -354,7 +353,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="table-responsive">
-        <table class="table table-hover master-table mb-0" id="masterTable">
+        <table class="table table-hover master-table mb-0 hd-mobile-card-table hd-page-sla hd-table-sla" id="masterTable">
             <thead class="table-light"><tr><th>No.</th>
 <th>Priority Name</th>
 <th>SLA Hours</th>

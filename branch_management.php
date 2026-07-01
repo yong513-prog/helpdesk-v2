@@ -201,6 +201,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </style>
 
 
+<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260701-unified3">
 <div class="master-page-header">
     <div>
         <h2 class="mb-1">Branch Management</h2>
@@ -255,7 +256,7 @@ $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="table-responsive">
-        <table class="table table-hover master-table mb-0 hd-mobile-card-table" id="masterTable">
+        <table class="table table-hover master-table mb-0 hd-mobile-card-table hd-page-branch hd-table-branch" id="masterTable">
             <thead class="table-light"><tr><th>No.</th>
 <th>Branch Code</th>
 <th>Branch Name</th>
@@ -433,6 +434,4 @@ document.addEventListener('DOMContentLoaded', function(){
 .master-card-header{background:#fff;}
 </style>
 <style>@media(max-width:768px){table.hd-mobile-card-table td:nth-child(1)::before{content:"序号";}table.hd-mobile-card-table td:nth-child(2)::before{content:"分行代码";}table.hd-mobile-card-table td:nth-child(3)::before{content:"分行名称";}table.hd-mobile-card-table td:nth-child(4)::before{content:"状态";}table.hd-mobile-card-table td:nth-child(5)::before{content:"操作";}}</style>
-<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260630true1">
-
 <?php require 'footer.php'; ?>

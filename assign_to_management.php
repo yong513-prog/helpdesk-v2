@@ -340,9 +340,8 @@ $assignList = $stmt->fetchAll(PDO::FETCH_ASSOC);
     .assign-table td:nth-child(5)::before{content:'Action';}
 }
 </style>
-<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260630true1">
 
-
+<link rel="stylesheet" href="assets/css/admin-ui-v2.css?v=20260701-unified3">
 <div class="assign-page-header">
     <div>
         <h2 class="mb-1"><?= esc(__('Assign To Management')); ?></h2>
@@ -407,7 +406,7 @@ $assignList = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="table-responsive">
-        <table class="table table-hover assign-table mb-0" id="assignTable">
+        <table class="table table-hover assign-table mb-0 hd-mobile-card-table hd-page-assign hd-table-assign" id="assignTable">
             <thead class="table-light">
                 <tr>
                     <th style="width:70px;">No.</th>
