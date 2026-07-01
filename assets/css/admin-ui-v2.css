@@ -46,17 +46,41 @@ body{background:var(--hd-bg)!important;color:var(--hd-text)!important;}
 .admin-v2-card-body,.master-card-body,.assign-card-body,.kbc-card-body,.ah-card-body{padding:20px!important;}
 .kbc-page{max-width:none!important;margin:0 0 28px!important;}
 .kbc-grid{display:block!important;grid-template-columns:none!important;gap:0!important;}
-/* Add form: always one field per row for consistent look */
-.admin-v2-add-form,.master-card:first-of-type .master-card-body form,.assign-card:first-of-type .assign-card-body form,.kbc-card:first-of-type .kbc-card-body form{
-  display:block!important;
+
+/* Desktop Add Form: all add fields are placed in ONE ROW, same as other management pages */
+.admin-v2-add-form,
+.master-card:first-of-type .master-card-body form,
+.assign-card:first-of-type .assign-card-body form,
+.kbc-card:first-of-type .kbc-card-body form{
+  display:grid!important;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr)) 220px!important;
+  gap:16px!important;
+  align-items:end!important;
 }
-.admin-v2-add-form .mb-3,.master-card:first-of-type .master-card-body .mb-3,.assign-card:first-of-type .assign-card-body .mb-3,.kbc-card:first-of-type .kbc-card-body .mb-3{
-  margin-bottom:16px!important;
+.admin-v2-add-form input[type="hidden"],
+.master-card:first-of-type .master-card-body form input[type="hidden"],
+.assign-card:first-of-type .assign-card-body form input[type="hidden"],
+.kbc-card:first-of-type .kbc-card-body form input[type="hidden"]{display:none!important;}
+.admin-v2-add-form .mb-3,
+.master-card:first-of-type .master-card-body .mb-3,
+.assign-card:first-of-type .assign-card-body .mb-3,
+.kbc-card:first-of-type .kbc-card-body .mb-3{
+  margin-bottom:0!important;
 }
-.admin-v2-add-form .form-row{margin-bottom:16px!important;}
-.admin-v2-add-form button[type="submit"],.master-card:first-of-type .master-card-body button[type="submit"],.assign-card:first-of-type .assign-card-body button[type="submit"],.kbc-card:first-of-type .kbc-card-body button[type="submit"]{
-  width:100%!important;min-height:44px!important;border-radius:12px!important;font-weight:900!important;
+.admin-v2-add-form .form-row{margin-bottom:0!important;}
+.admin-v2-add-form .form-check,
+.master-card:first-of-type .master-card-body .form-check,
+.assign-card:first-of-type .assign-card-body .form-check,
+.kbc-card:first-of-type .kbc-card-body .form-check{
+  min-height:38px!important;display:flex!important;align-items:center!important;gap:8px!important;margin-bottom:0!important;
 }
+.admin-v2-add-form button[type="submit"],
+.master-card:first-of-type .master-card-body button[type="submit"],
+.assign-card:first-of-type .assign-card-body button[type="submit"],
+.kbc-card:first-of-type .kbc-card-body button[type="submit"]{
+  width:100%!important;height:40px!important;min-height:40px!important;margin:0!important;border-radius:12px!important;font-weight:900!important;align-self:end!important;
+}
+
 .form-label{font-weight:800!important;color:var(--hd-text)!important;font-size:14px!important;margin-bottom:8px!important;}
 .form-control,.form-select{border:1px solid #d7dee8!important;border-radius:12px!important;min-height:38px!important;box-shadow:none!important;color:var(--hd-text)!important;background:#fff!important;}
 .form-control:focus,.form-select:focus{border-color:#86b7fe!important;box-shadow:0 0 0 .2rem rgba(37,99,235,.12)!important;}
@@ -89,6 +113,7 @@ body{background:var(--hd-bg)!important;color:var(--hd-text)!important;}
 .kbc-card .btn-primary{background:var(--hd-primary)!important;border-color:var(--hd-primary)!important;color:#fff!important;}
 .kbc-card .btn-outline-secondary{background:var(--hd-warning)!important;border-color:var(--hd-warning)!important;color:#111827!important;}
 .kbc-card .btn-outline-danger{background:var(--hd-danger)!important;border-color:var(--hd-danger)!important;color:#fff!important;}
+
 @media(max-width:768px){
   .admin-v2-header,.master-page-header,.assign-page-header,.kbc-hero,.ah-page-header{flex-direction:column!important;align-items:stretch!important;gap:10px!important;margin-bottom:14px!important;}
   .admin-v2-header h2,.master-page-header h2,.assign-page-header h2,.kbc-hero h2,.ah-page-header h2{font-size:24px!important;}
@@ -96,6 +121,27 @@ body{background:var(--hd-bg)!important;color:var(--hd-text)!important;}
   .admin-v2-card,.master-card,.assign-card,.kbc-card,.ah-card{border-radius:18px!important;margin-bottom:14px!important;}
   .admin-v2-card-header,.master-card-header,.assign-card-header,.kbc-card-header,.ah-card-header{display:block!important;padding:15px 16px!important;}
   .admin-v2-card-body,.master-card-body,.assign-card-body,.kbc-card-body,.ah-card-body{padding:15px!important;}
+
+  /* Mobile add form remains stacked for readability */
+  .admin-v2-add-form,
+  .master-card:first-of-type .master-card-body form,
+  .assign-card:first-of-type .assign-card-body form,
+  .kbc-card:first-of-type .kbc-card-body form{
+    display:block!important;
+  }
+  .admin-v2-add-form .mb-3,
+  .master-card:first-of-type .master-card-body .mb-3,
+  .assign-card:first-of-type .assign-card-body .mb-3,
+  .kbc-card:first-of-type .kbc-card-body .mb-3{
+    margin-bottom:14px!important;
+  }
+  .admin-v2-add-form button[type="submit"],
+  .master-card:first-of-type .master-card-body button[type="submit"],
+  .assign-card:first-of-type .assign-card-body button[type="submit"],
+  .kbc-card:first-of-type .kbc-card-body button[type="submit"]{
+    min-height:46px!important;
+  }
+
   .input-group.search-input,.search-input,.ah-search,.admin-v2-search{width:100%!important;max-width:100%!important;margin-top:12px!important;}
   .table-responsive{overflow:visible!important;}
   table.hd-mobile-card-table{border-collapse:separate!important;border-spacing:0 14px!important;width:100%!important;}
