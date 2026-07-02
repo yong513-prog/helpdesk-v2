@@ -153,8 +153,89 @@ body{background:var(--hd-bg)!important;color:var(--hd-text)!important;}
   table.hd-mobile-card-table td::before{display:block!important;font-size:12px!important;font-weight:900!important;color:var(--hd-muted)!important;text-transform:uppercase!important;letter-spacing:.02em!important;margin-bottom:6px!important;}
   table.hd-mobile-card-table input.form-control,table.hd-mobile-card-table select.form-select{width:100%!important;min-height:44px!important;font-size:16px!important;border-radius:12px!important;}
   table.hd-mobile-card-table .btn{min-height:42px!important;border-radius:12px!important;font-weight:900!important;padding:.55rem .8rem!important;}
-  table.hd-mobile-card-table td:last-child,.action-buttons,.status-action-group,.ah-actions,.admin-v2-actions{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:8px!important;align-items:stretch!important;}
-  table.hd-mobile-card-table td:last-child .btn,.action-buttons .btn,.status-action-group .btn,.ah-actions .btn,.admin-v2-actions .btn{width:100%!important;margin:0!important;white-space:normal!important;}
+
+  /* Mobile only: make every management Action area use the same 3-button row style. Desktop is unchanged. */
+  table.hd-mobile-card-table td:last-child,
+  .action-buttons,
+  .status-action-group,
+  .ah-actions,
+  .admin-v2-actions{
+    display:grid!important;
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:10px!important;
+    align-items:stretch!important;
+    width:100%!important;
+  }
+  table.hd-mobile-card-table td:last-child > form,
+  table.hd-mobile-card-table td:last-child > a,
+  table.hd-mobile-card-table td:last-child > button,
+  .action-buttons > form,
+  .action-buttons > a,
+  .action-buttons > button,
+  .status-action-group > form,
+  .status-action-group > a,
+  .status-action-group > button,
+  .ah-actions > form,
+  .ah-actions > a,
+  .ah-actions > button,
+  .admin-v2-actions > form,
+  .admin-v2-actions > a,
+  .admin-v2-actions > button{
+    width:100%!important;
+    min-width:0!important;
+    margin:0!important;
+  }
+  table.hd-mobile-card-table td:last-child .btn,
+  .action-buttons .btn,
+  .status-action-group .btn,
+  .ah-actions .btn,
+  .admin-v2-actions .btn{
+    width:100%!important;
+    min-height:48px!important;
+    margin:0!important;
+    border-radius:14px!important;
+    padding:.7rem .5rem!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:6px!important;
+    white-space:nowrap!important;
+    box-shadow:0 8px 18px rgba(15,23,42,.10)!important;
+  }
+  table.hd-mobile-card-table td:last-child .btn i,
+  .action-buttons .btn i,
+  .status-action-group .btn i,
+  .ah-actions .btn i,
+  .admin-v2-actions .btn i{
+    margin:0!important;
+    font-size:16px!important;
+    line-height:1!important;
+  }
+  table.hd-mobile-card-table td:last-child .btn-danger,
+  .action-buttons .btn-danger,
+  .status-action-group .btn-danger,
+  .ah-actions .btn-danger,
+  .admin-v2-actions .btn-danger{
+    font-size:0!important;
+  }
+  table.hd-mobile-card-table td:last-child .btn-danger i,
+  .action-buttons .btn-danger i,
+  .status-action-group .btn-danger i,
+  .ah-actions .btn-danger i,
+  .admin-v2-actions .btn-danger i{
+    font-size:18px!important;
+  }
+  table.hd-mobile-card-table td:last-child .btn-danger::before,
+  .action-buttons .btn-danger::before,
+  .status-action-group .btn-danger::before,
+  .ah-actions .btn-danger::before,
+  .admin-v2-actions .btn-danger::before{
+    content:"\F5DE";
+    font-family:"bootstrap-icons"!important;
+    font-size:18px!important;
+    line-height:1!important;
+  }
+
   .hd-table-asset td:nth-child(1)::before{content:"No.";}
   .hd-table-asset td:nth-child(2)::before{content:"Asset Type";}
   .hd-table-asset td:nth-child(3)::before{content:"Sort";}
