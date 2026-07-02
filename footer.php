@@ -121,7 +121,6 @@
 
 
 
-
 <style>
 /* WhatsApp-style voice recording + global pull refresh */
 .hd-wa-record-btn{touch-action:none;user-select:none;-webkit-user-select:none;position:relative}
@@ -139,6 +138,25 @@
 .hd-pull-refresh-indicator{position:fixed;left:50%;top:12px;transform:translate(-50%,-90px);z-index:5000;background:#fff;border:1px solid #dbe3ee;border-radius:999px;padding:9px 14px;box-shadow:0 12px 28px rgba(15,23,42,.18);font-weight:800;color:#2563eb;transition:transform .18s ease,opacity .18s ease;opacity:0;pointer-events:none}
 .hd-pull-refresh-indicator.show{transform:translate(-50%,0);opacity:1}.hd-pull-refresh-indicator.ready{color:#16a34a}
 @media(max-width:768px){.hd-wa-voice-panel audio{width:100%;max-width:100%}.hd-wa-record-btn{min-height:44px}}
+<?php
+$hdCurrentScript = basename($_SERVER['SCRIPT_NAME'] ?? '');
+$hdNativePullRefreshBlocked = in_array($hdCurrentScript, [
+    'create_ticket.php',
+    'view_ticket.php',
+    'edit_ticket.php',
+    'add_asset.php',
+    'edit_asset.php',
+    'add_article.php',
+    'edit_article.php',
+    'add_announcement.php',
+    'edit_announcement.php'
+], true);
+?>
+<?php if($hdNativePullRefreshBlocked): ?>
+@media(max-width:768px){
+  html,body{overscroll-behavior-y:contain!important;}
+}
+<?php endif; ?>
 </style>
 <script>
 (function(){
@@ -338,6 +356,15 @@
     'audit_logs.php'
 ], true)); ?>;
 
+  const HD_NATIVE_PULL_REFRESH_BLOCKED = <?= json_encode($hdNativePullRefreshBlocked); ?>;
+
+  function initNativePullRefreshBlock(){
+    // Android Chrome native pull-to-refresh is controlled by CSS overscroll-behavior above.
+    // Do not call preventDefault() here, otherwise long form pages cannot scroll normally.
+    if(!HD_NATIVE_PULL_REFRESH_BLOCKED) return;
+    if(document.body) document.body.dataset.hdNativePullBlockReady='1';
+  }
+
   function initPullRefresh(){
     if(!HD_PULL_REFRESH_ALLOWED) return;
     if(!('ontouchstart' in window) || document.body.dataset.hdPullRefreshReady==='1') return;
@@ -366,7 +393,7 @@
     }, {passive:true});
   }
 
-  document.addEventListener('DOMContentLoaded', function(){ initAttachmentAccumulators(document); initAllVoice(document); initPullRefresh(); });
+  document.addEventListener('DOMContentLoaded', function(){ initAttachmentAccumulators(document); initAllVoice(document); initNativePullRefreshBlock(); initPullRefresh(); });
   const mo=new MutationObserver(ms=>ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1){ initAttachmentAccumulators(n); initAllVoice(n); }}))); 
   document.addEventListener('DOMContentLoaded', function(){ if(document.body) mo.observe(document.body,{childList:true,subtree:true}); });
 })();
