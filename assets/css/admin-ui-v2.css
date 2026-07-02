@@ -166,6 +166,14 @@ body{background:var(--hd-bg)!important;color:var(--hd-text)!important;}
     align-items:stretch!important;
     width:100%!important;
   }
+  table.hd-mobile-card-table td:last-child::before,
+  table.hd-mobile-card-table td:last-child > .action-buttons,
+  table.hd-mobile-card-table td:last-child > .status-action-group,
+  table.hd-mobile-card-table td:last-child > .ah-actions,
+  table.hd-mobile-card-table td:last-child > .admin-v2-actions{
+    grid-column:1 / -1!important;
+    width:100%!important;
+  }
   table.hd-mobile-card-table td:last-child > form,
   table.hd-mobile-card-table td:last-child > a,
   table.hd-mobile-card-table td:last-child > button,
@@ -184,6 +192,7 @@ body{background:var(--hd-bg)!important;color:var(--hd-text)!important;}
     width:100%!important;
     min-width:0!important;
     margin:0!important;
+    display:block!important;
   }
   table.hd-mobile-card-table td:last-child .btn,
   .action-buttons .btn,
@@ -191,16 +200,17 @@ body{background:var(--hd-bg)!important;color:var(--hd-text)!important;}
   .ah-actions .btn,
   .admin-v2-actions .btn{
     width:100%!important;
-    min-height:48px!important;
+    min-height:50px!important;
     margin:0!important;
     border-radius:14px!important;
-    padding:.7rem .5rem!important;
+    padding:.72rem .5rem!important;
     display:flex!important;
     align-items:center!important;
     justify-content:center!important;
     gap:6px!important;
     white-space:nowrap!important;
     box-shadow:0 8px 18px rgba(15,23,42,.10)!important;
+    font-size:15px!important;
   }
   table.hd-mobile-card-table td:last-child .btn i,
   .action-buttons .btn i,
